@@ -253,8 +253,8 @@ public class Sort {
 		case COL3 : if (bet == 3 && col3) {win = true;} else {win = false;} break;
 		case RED :	if (bet == 1 && red) {win = true;} else {win = false;} break;
 		case BLACK : if (bet == 2 && black) {win = true;} else {win = false;} break;
-		case ODD : if (bet % 2  == 0 && currentBet % 2 == 0)  {win = false;} else {win = true;} break;
-		case EVEN : if (bet % 2  == 0 && currentBet % 2 == 0)  {win = true;} else {win = false;} break;
+		case ODD : if ((bet % 2  == 0) && (currentBet % 2 == 0))  {win = false;} else {win = true;} break;
+		case EVEN : if ((bet % 2  == 0) && (currentBet % 2 == 0))  {win = true;} else {win = false;} break;
 		case FIRSTHALF : if (bet <=18 && firsthalf)  {win = true;} else {win = false;} break;
 		case SECONDHALF : if (bet >=19 && secondhalf)  {win = true;} else {win = false;} break;
 		default : win = false; break;
