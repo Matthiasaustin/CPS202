@@ -1,7 +1,7 @@
 // Application Text counts the occurrence of all characters 
 // in a text file
 package lab7;
-import java.util.Scanner
+import java.util.Scanner;
 import java.io.*;
 public class Text
 {
@@ -14,17 +14,27 @@ public class Text
     int index;
     String line;
     Scanner inFile;
-    inFile = new Scanner(new FileReader("Text.dat"));
+    inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//src//lab7//Text.dat"));
 
-    while (/* TO BE FILLED IN: Exercise 4 */)
+    while (inFile.hasNextLine())
     {
       line = inFile.nextLine();
-      /* TO BE FILLED IN: Exercise 5 */
+      for(index = 0; index < line.length(); index++)
+      {
+    	  lineArray = new char[line.length() + 1];
+    	  lineArray[index] = line.charAt(index);
+    	  charCount[(int)lineArray[index]] = charCount[(int)lineArray[index]] + 1;
+      }
     }
     for (index = 0; index < charCount.length; index++)
     {
-      /* TO BE FILLED IN: Exercise 6 */
+     char character;
+     int count;
+     character = (char) index;
+     count = charCount[index];
+     System.out.println("The character " + character +" occurs " + count + " times.");
     }
+    inFile.close();
   }
 }
 

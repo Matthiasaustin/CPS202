@@ -1,5 +1,5 @@
 package lab7;
-import date; 
+import lab7.Date; 
 public class ImportantDate
 {
   Date date;
