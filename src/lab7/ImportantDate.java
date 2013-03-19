@@ -9,12 +9,18 @@ public class ImportantDate
 
   public ImportantDate()
   {
+    reason = "None";
+	  date = new Date(1,1,1);
+	  
   }
   public ImportantDate(String newReason, Date newDate)
   {
+	  reason = newReason;
+	  date = newDate;
   }
   public String toString()
   {
+	  return date + "is an important date because " + reason;
   }
 }
 
