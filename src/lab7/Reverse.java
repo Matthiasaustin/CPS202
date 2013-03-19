@@ -1,5 +1,7 @@
 // Application Reverse reads numbers into an array 
 // and prints them out in reverse order.   
+
+package lab7;
 import java.util.Scanner;
 import java.io.*;
 public class Reverse

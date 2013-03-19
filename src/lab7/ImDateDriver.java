@@ -1,3 +1,4 @@
+package lab7;
 import java.util.Scanner;
 import java.io.*;
 public class ImDateDriver

@@ -1,5 +1,5 @@
 // Application Arrays manipulates values in an array.             
-
+package lab7;
 public class Arrays
 {
   public static void main(String[] args)

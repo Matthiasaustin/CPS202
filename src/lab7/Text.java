@@ -1,5 +1,6 @@
 // Application Text counts the occurrence of all characters 
 // in a text file
+package lab7;
 import java.util.Scanner
 import java.io.*;
 public class Text
