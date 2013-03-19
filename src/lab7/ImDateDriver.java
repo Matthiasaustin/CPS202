@@ -3,21 +3,23 @@ import java.util.Scanner;
 import java.io.*;
 public class ImDateDriver
 {
-  public static void main(String[] args)
+  @SuppressWarnings("null")
+public static void main(String[] args) throws FileNotFoundException
   {
     ImportantDate[] myDates;
     myDates = new ImportantDate[20];
-    Scanner inFile = new Scanner(new FileReader("myDates"));
+    Scanner inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//src//lab7//date1"));
     Date aDate;
-    
-    
     ImportantDate myDate;
-    while (inFile.hasNextLine())
+    for(int index = 0; inFile.hasNextLine(); index++)
     {
-    aDate = new Date(inFile.nextInt(),inFile.nextInt(),inFile.nextInt());
+    ImportantDate tempDate = null;
     
-      aDate = new ImportantDate();
-      myDates[1]=aDate;
+    
+    tempDate.setDate(inFile.nextInt(), inFile.nextInt(), inFile.nextInt());
+    tempDate.reason = inFile.next();
+    tempDate = new ImportantDate(tempDate.reason, tempDate.date);
+     myDates[index]= tempDate;
     }
   }
 }

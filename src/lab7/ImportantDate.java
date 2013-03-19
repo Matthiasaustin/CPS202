@@ -22,5 +22,10 @@ public class ImportantDate
   {
 	  return date + "is an important date because " + reason;
   }
+  public void setDate(int day, int month, int year) 
+
+  {
+	date = new Date (day, month, year);  
+  }
 }
 
