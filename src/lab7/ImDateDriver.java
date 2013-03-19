@@ -13,6 +13,8 @@ public class ImDateDriver
     while (inFile.hadNextLine())
     {
       /* TO BE FILLED IN: Exercise 3 */
+      adate = new ImportantDate();
+      myDates[1]=adate;
     }
   }
 }
