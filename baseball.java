@@ -1,5 +1,7 @@
  
  
+public class baseball
+{
 /*
 *Array to hold the data recieved or calculated in app
 *
@@ -17,14 +19,24 @@ baseball = new int [20][4];
 int [] line;
 line = new int [4];
 
+Scanner inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//playdata."));
 
  public static void main (String [] args)
  {
 
+while (inFile.hasNextLine())
+{
 //read in line from file into line array
-
+for(int index = 0; inFile.hasNextInt(); index++)
+{
+	line[index] = inFile.nextInt();
+}
 //assign values to baseball array, summing values as values are read in 
-
+baseball[0] = line[0];
+for(int index = 1; index < line.length; index++)
+{
+	
+}
 //calculate at bats
 
 //calculatee batting average
@@ -34,50 +46,6 @@ line = new int [4];
 //print results for all players
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
  }
+}
