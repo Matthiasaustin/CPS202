@@ -35,7 +35,8 @@ for(int index = 0; inFile.hasNextInt(); index++)
 baseball[0] = line[0];
 for(int index = 1; index < line.length; index++)
 {
-	baseball [index]= line [index];
+//	baseball [¡index-1][index]= line [index];
+baseball [line[0]][index - 1] = line [index];
 }
 //calculate at bats
 for (into index = 0; )
