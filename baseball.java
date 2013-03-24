@@ -49,4 +49,11 @@ for (into index = 0; )
 
 }
  }
+			
+			
+			//format and print results
+
+				for(int c = 0; c < 20; c++ )
+				{
+					System.out.println ( baseball[c] + " " + baseball [c][4] + " " + baseball [c][1]);	
 }
