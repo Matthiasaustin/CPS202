@@ -1,3 +1,4 @@
+package lab8;
 import java.io.*;
 import java.util.Scanner;
 public class TwoDTable
@@ -13,13 +14,32 @@ public class TwoDTable
   //  rowsUsed and colsUsed are the first values on the file; 
   //  values follow by row, one value per line             
   {
-    /* TO BE FILLED IN: Exercise 1 */
+   rowsUsed = inFile.nextInt();
+   colsUsed = inFile.nextInt();
+   for (int i = 0; i < rowsUsed; i++ )
+   {
+    for (int j = 0; j < colsUsed; j++)
+    {
+      table[i][j] = inFile.nextInt();
+    }
+   }
   }
 
   public void  printTable()
   // Writes values in the table on System.out
   {
-    /* TO BE FILLED IN: Exercise 1 */
+   public static PrintWriter outFile; 
+   outFile = new PrintWriter(new FileWriter("//Volumes//Storage//Code//CPS202//src//lab8//tableresults.dat")); 
+
+      for (int i = 0; i < rowsUsed; i++ )
+   {
+    for (int j = 0; j < colsUsed; j++)
+    {
+      outFile.print(table[i][j]); 
+    }
+    outFile.println();
+   }
+  }
   }
 
   // Data fields
