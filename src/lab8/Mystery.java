@@ -1,4 +1,5 @@
-package mystery;
+
+package lab8;
 import java.util.Scanner;
 import java.io.*;
 public class Mystery
