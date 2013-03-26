@@ -9,8 +9,7 @@ public class UseMystery
     Mystery  table;
     table = new Mystery(8,10);
 
-    Scanner inFile = new Scanner(
-      new FileReader("debug.dat"));
+    Scanner inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//src//lab8//debug.dat"));
 
     table.getMystery(inFile);
     table.printMystery();

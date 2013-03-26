@@ -12,6 +12,8 @@ public class UseTable
     Scanner inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//src//lab8//twod.dat"));
 
     table.getTable(inFile);
+    table.rowSum();
+    table.colSum();
     table.printTable();
     inFile.close();
   }

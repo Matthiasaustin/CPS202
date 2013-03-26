@@ -16,13 +16,17 @@ public class Mystery
   // values follow by row, one value per line             
   {
 
-    colsUsed = inFile.nextInt();
     rowsUsed = inFile.nextInt();
+    colsUsed = inFile.nextInt();
    
     for (int row = 0; row < rowsUsed; row++)
-      for (int col = 0; col < colsUsed-1; col++)
-        table[row][col] = inFile.nextInt();
-  }
+    {
+      for (int col = 0; col < colsUsed; col++)
+      {
+    	  table[row][col] = inFile.nextInt(); 
+      }
+    }
+    }
 
   public void  printMystery()
   // Writes values in the table on System.out
