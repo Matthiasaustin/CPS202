@@ -16,8 +16,8 @@ public class Arrays
 		for (index = 0; index < numbers.length; index++)
 			numbers[index] = index * index;
 			number = numbers[index];
-			character.toChars(number);
-		System.out.println(character);
+//			character.toChars(number);
+//		System.out.println(character);
 
 		// The values in the array are summed. 
 		sum = 0; 
