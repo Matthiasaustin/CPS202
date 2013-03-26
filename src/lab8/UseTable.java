@@ -1,5 +1,6 @@
 package lab8;
 import java.util.Scanner;
+import lab8.TwoDTable;
 import java.io.*;
 public class UseTable
 {
