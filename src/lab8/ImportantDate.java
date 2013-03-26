@@ -20,7 +20,7 @@ public class ImportantDate
   }
   public String toString()
   {
-	  return date + "is an important date because " + reason;
+	  return date + " is an important date because " + reason;
   }
   public void setDate(int day, int month, int year) 
 
