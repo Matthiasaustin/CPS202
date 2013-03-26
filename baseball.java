@@ -18,6 +18,13 @@ public class baseball
 	//holds the contents of the line as read in
 	static int [] line = new int [4];
 
+	for(int index = 0; index < 20; index++)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			baseball[index][i] = 0;
+		}
+	}
 	
 
 	public static void main (String [] args) throws FileNotFoundException
@@ -25,6 +32,14 @@ public class baseball
 		Scanner inFile = new Scanner(new FileReader("//Volumes//Storage//Code//CPS202//playdata"));
 		while (inFile.hasNextLine())
 		{
+
+				for(int index = 0; index < 20; index++)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			baseball[index][i] = 0;
+		}
+	}
 			//read in line from file into line array
 			for(int index = 0; index < 4; index++)
 			{
