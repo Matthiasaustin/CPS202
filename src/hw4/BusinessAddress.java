@@ -32,9 +32,13 @@ public BusinessAddress(Scanner in)
     String separator = in.nextLine();  // Read past end-of-line mark
   }
 
+public String getCompName () {return compName;}
+public String getDept () { return dpt;}
 
-
+public String toString() 
+  {
     return compName + ", " + dept + '\n' + street + '\n' + city + ", " + state + "  " + zipCode;
+  }
 
 
 
