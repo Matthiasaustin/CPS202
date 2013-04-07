@@ -6,10 +6,10 @@ import java.util.Scanner;
 import java.io.*;
 public class Address implements Serializable
 {
-  String street;        // Street address
-  String city;          // City part of the address
-  String state;         // The state (two-letter abbreviation)
-  int zipCode;
+  protected String street;        // Street address
+  protected String city;          // City part of the address
+  protected String state;         // The state (two-letter abbreviation)
+  protected int zipCode;
 
   public Address()      // Default constructor
   {
