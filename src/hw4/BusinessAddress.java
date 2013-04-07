@@ -34,6 +34,7 @@ public BusinessAddress(Scanner in)
 
 
 
+    return compName + ", " + dept + '\n' + street + '\n' + city + ", " + state + "  " + zipCode;
 
 
 
