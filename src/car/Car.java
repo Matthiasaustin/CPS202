@@ -4,48 +4,48 @@ import java.io.*;
 
 public class Car{
 
-//create a car with categories dealer, cost, id number and date arrived
-//variables
-double dealerCost;
-int idNumber;
-Date arrived;
+	//create a car with categories dealer, cost, id number and date arrived
+	//variables
+	double dealerCost;
+	int idNumber;
+	Date arrived;
 
 
-Car(){
-idNumber = 999999999;
-arrived = new Date();
-dealerCost = 9999999999.99;
-}
+	public Car(){
+		idNumber = 999999999;
+		arrived = new Date();
+		dealerCost = 9999999999.99;
+	}
 
-Car(double newdealerCost, int newidNumber, int day, int month, int year) {
-	dealerCost = newdealerCost;
-	idNumber = newidNumber;
-	arrived = new Date (day, month, year);
-}
-//get dealer cost, a float
-	
+	public Car(double newdealerCost, int newidNumber, int day, int month, int year) {
+		dealerCost = newdealerCost;
+		idNumber = newidNumber;
+		arrived = new Date (day, month, year);
+	}
+	//get dealer cost, a float
+
 	protected double getDealerCost()
 	{
-	return dealerCost;
+		return dealerCost;
 	}
 
-//get id number, return int
+	//get id number, return int
 
-	
+
 	protected int getIdNumber()
 	{
-	return idNumber;
+		return idNumber;
 	}
 
-//get date arrived, return date
+	//get date arrived, return date
 
 	protected Date getArrived ()
 	{
-	return arrived;
+		return arrived;
 	}
-//format results for printing, return string
+	//format results for printing, return string
 
-	protected String getResults()
+	public String getResults()
 	{
 		return "The dealer cost is: $" + getDealerCost() + "\nThe cars ID number is: " +
 				"" + getIdNumber() + "\nThe date the car arrived is " + arrived.toString();

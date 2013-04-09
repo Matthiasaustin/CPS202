@@ -13,45 +13,45 @@ public class SoldCar extends Car
 	//date sold
 	Date sold;
 	//constructor
-	SoldCar(){
-			idNumber = 999999999;
-			arrived = new Date();
-			dealerCost = 9999999999.99;
-			sold = new Date();
-			customer = "none";
-			price = 9999999999999.99;	
+	public SoldCar(){
+		idNumber = 999999999;
+		arrived = new Date();
+		dealerCost = 9999999999.99;
+		sold = new Date();
+		customer = "none";
+		price = 9999999999999.99;	
 	}
-	
-	SoldCar(double newdealerCost, int newidNumber, int aday, int amonth, 
+
+	public SoldCar(double newdealerCost, int newidNumber, int aday, int amonth, 
 			int ayear,int sday, int smonth, int syear, String newcustomer, double newprice) {
 		currentCar = new Car(newdealerCost,newidNumber, aday, amonth, ayear);
 		sold = new Date(sday,smonth,syear);
 		customer = newcustomer;
 		price = newprice;	
-}
+	}
 	// get price, float
 	protected double getPrice()
 	{
-	return price;
+		return price;
 	}
 	// get customer, string
 	protected String getCustomer()
 	{
-	return customer;
+		return customer;
 	}
 	// get date sold, date
 	protected Date getSold()
 	{
-	return sold;
+		return sold;
 	}
 	//calculate profit, float
-	protected double getProfit()
+	public double getProfit()
 	{
 		profit = getPrice() - currentCar.getDealerCost();
 		return profit;
 	}
 	//format output, string
-	protected String getResults()
+	public String getResults()
 	{
 		return "The dealer cost is: $" + getDealerCost() + "\nThe cars ID number is: " +
 				"" + getIdNumber() + "\nThe date the car arrived is " + arrived.toString() +
