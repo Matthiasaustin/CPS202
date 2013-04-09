@@ -1,4 +1,4 @@
-package lab9;
+package car;
 
 public class SoldCar extends Car
 {
