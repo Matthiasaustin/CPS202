@@ -3,12 +3,14 @@ package lab10;
 public class PhoneDriver 
 {
 static Phone phone;
+
 static cablePhone cable;
 static landPhone land;
 static cellPhone cell;
 public static void main (String [] args)
 {
-System.out.println();
+	phone = new Phone();
+
 phone.setArea(425);
 phone.setNum(5126639);
 cell= new cellPhone("Something", "Other", 625,5555);

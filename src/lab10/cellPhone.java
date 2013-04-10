@@ -5,10 +5,10 @@ public class cellPhone extends Phone
  String maker;
  String service;
  
- public cellPhone (String servicer,String manufacterer, int area, int number)
+ public cellPhone (String servicer,String manufacterer, int Area, int number)
  {
  	num = number;
- 	area = this.area;
+ 	area = Area;
  	maker = manufacterer;
  	service = servicer;
  }

@@ -1,13 +1,17 @@
 package lab10;
 
-public class cablePhone extends Phone
+public class cablePhone extends landPhone
 {
 String cableProvider;
 
-public cablePhone (String provider, int area, int number)
+public cablePhone()
+{
+	num = 0;
+}
+public cablePhone (String provider, int Area, int number)
 {
 	num = number;
-	area = this.area;
+	area = Area;
 	cableProvider = provider;
 }
 public String toString ()

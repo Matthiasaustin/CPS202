@@ -5,13 +5,19 @@ public class landPhone extends Phone
 {
 String address;
 String longDistance;
-public landPhone (String adresses,String longD, int area, int number)
+landPhone() 
+{
+	
+}
+public landPhone (String adresses,String longD, int Area, int number)
 {
 	num = number;
-	area = this.area;
+	area = Area;
 	address = adresses;
 	longDistance = longD;
 }
+
+
 
 public String toString ()
 {
