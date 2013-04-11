@@ -3,12 +3,17 @@ import java.io.*;
 import java.util.*; 
 
 import utilities.Address;
-public class AdressRecords extends Address implements Serializable
+public class AdressRecords implements Serializable
 {
 
 	static Scanner in = new Scanner(System.in);
 	public static void main(String [] args) throws FileNotFoundException, IOException
 	{
+		
+		String street;
+		String city;
+		String state;
+		int zip;
 		ObjectOutputStream outObject = new ObjectOutputStream(new FileOutputStream("outAddresses.dat"));
 		String type = "z";
 		BusinessAddress business;
@@ -28,9 +33,15 @@ public class AdressRecords extends Address implements Serializable
 				business = new BusinessAddress(in);
 				outObject.writeObject(business);
 			} else {
-				System.out.println("Please enter street(hit enter after street is finished)" +
-						", city, state, and zipcode followed by spaces.");
-				nAddress = new Address(in);
+				System.out.println("Please enter " +
+						", city, state, zipcode ( followed by spaces), and street(hit enter after street is finished.");
+
+				
+				city = in.next();
+				state = in.next();
+				zip = in.nextInt();
+				street = in.nextLine();
+				nAddress = new BusinessAddress(street, city, state,zip);
 				outObject.writeObject(nAddress);
 			}
 			System.out.println("Thank you. If you would like to record another address, type y.");

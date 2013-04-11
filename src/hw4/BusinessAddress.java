@@ -32,6 +32,13 @@ public BusinessAddress(Scanner in)
     String separator = in.nextLine();  // Read past end-of-line mark
   }
 
+public BusinessAddress(String nstreet, String ncity, String nstate, int nzip)
+{
+	street = nstreet;
+	city = ncity;
+	state = nstate;
+	zipCode = nzip;
+}
 public BusinessAddress (String newcompany, String newdepartment, String newstreet, String newcity, String newstate, int newzipcode)
 {
       compName = newcompany;
