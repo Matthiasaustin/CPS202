@@ -21,7 +21,8 @@ public class Address implements Serializable
 
   public Address(Scanner in)           // Scanner constructor
   {
-    street = in.nextLine();
+    String space = in.next();
+	street = in.nextLine();
     city = in.next();
     state = in.next();
     zipCode = in.nextInt();
