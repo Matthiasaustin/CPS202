@@ -51,5 +51,10 @@ public class Car{
 				"" + getIdNumber() + "\nThe date the car arrived is " + arrived.toString();
 	}
 
+	public double getPrice() {
+		
+		return dealerCost;
+	}
+
 
 }

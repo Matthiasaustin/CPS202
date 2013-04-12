@@ -1,8 +1,9 @@
 package lab10;
-     
+   
 import car.*;
+
 // Access Date, Car, and SoldCar classes
-public class Driver
+public class Driver extends SoldCar
 {
 	
 	

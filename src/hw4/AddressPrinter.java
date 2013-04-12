@@ -11,16 +11,14 @@ public class AddressPrinter {
 	inObject = new ObjectInputStream(new FileInputStream("outAddresses.dat"));
 
 	PrintWriter out;
-	out = new PrintWriter(new FileWriter("outAddress.dat");
-	
-	Address outputBusiness = (Address) inObject.readObject();
+	out = new PrintWriter(new FileWriter("outAddress.dat"));
+while(inObject.hashCode())
+{
+	BusinessAddress outputBusiness = (BusinessAddress) inObject.readObject();
 	System.out.println(outputBusiness);
 	out.println(outputBusiness);
 	inObject.close();
-	}
+}	
+}
 }
 
-public static String format()
-{
-	return 
-}

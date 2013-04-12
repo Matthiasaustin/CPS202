@@ -14,23 +14,21 @@ public class SoldCar extends Car
 	Date sold;
 	//constructor
 	public SoldCar(){
-		idNumber = 999999999;
+		super(999999999, (int) 9999999.99, 0, 0,0);
 		arrived = new Date();
-		dealerCost = 9999999999.99;
-		sold = new Date();
 		customer = "none";
 		price = 9999999999999.99;	
 	}
 
 	public SoldCar(double newdealerCost, int newidNumber, int aday, int amonth, 
 			int ayear,int sday, int smonth, int syear, String newcustomer, double newprice) {
-		currentCar = new Car(newdealerCost,newidNumber, aday, amonth, ayear);
+		super(newdealerCost,newidNumber, aday, amonth, ayear);
 		sold = new Date(sday,smonth,syear);
 		customer = newcustomer;
 		price = newprice;	
 	}
 	// get price, float
-	protected double getPrice()
+	public double getPrice()
 	{
 		return price;
 	}
@@ -47,7 +45,7 @@ public class SoldCar extends Car
 	//calculate profit, float
 	public double getProfit()
 	{
-		profit = getPrice() - currentCar.getDealerCost();
+		profit = getPrice() - super.getDealerCost();
 		return profit;
 	}
 	//format output, string
