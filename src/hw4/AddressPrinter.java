@@ -7,18 +7,26 @@ import utilities.Address;
 public class AddressPrinter {
 	public static void main (String [] args) throws FileNotFoundException, IOException, ClassNotFoundException 
 	{
- ObjectInputStream inObject;
+
+		int check = 0;
+		
+		ObjectInputStream inObject;
 	inObject = new ObjectInputStream(new FileInputStream("outAddresses.dat"));
+
+	ObjectInputStream inCount;
+	inCount = new ObjectInputStream(new FileInputStream("outCount.dat"));
+	int count = (int) inCount.read();
 
 	PrintWriter out;
 	out = new PrintWriter(new FileWriter("outAddress.dat"));
-while(inObject.hashCode())
+do
 {
 	BusinessAddress outputBusiness = (BusinessAddress) inObject.readObject();
 	System.out.println(outputBusiness);
 	out.println(outputBusiness);
-	inObject.close();
-}	
+	check++;
+} while(check <= count);
+inObject.close();
 }
 }
 

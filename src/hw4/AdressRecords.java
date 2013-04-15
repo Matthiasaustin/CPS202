@@ -15,9 +15,10 @@ public class AdressRecords implements Serializable
 		String state;
 		int zip;
 		ObjectOutputStream outObject = new ObjectOutputStream(new FileOutputStream("outAddresses.dat"));
+		ObjectOutputStream outCount = new ObjectOutputStream(new FileOutputStream("outCount.dat"));
 		String type = "z";
 		BusinessAddress business;
-		Address nAddress;
+		BusinessAddress nAddress;
 		boolean iterate = true;
 		String again;
 		while ( iterate == true)
@@ -31,6 +32,8 @@ public class AdressRecords implements Serializable
 				System.out.println("Please enter company, department, street(please start new line here with enter key)" +
 						", city, state, and zipcode seperated by spaces");
 				business = new BusinessAddress(in);
+				business.count++;
+				outCount.writeInt(business.count);
 				outObject.writeObject(business);
 			} else {
 				System.out.println("Please enter " +
@@ -42,6 +45,8 @@ public class AdressRecords implements Serializable
 				zip = in.nextInt();
 				street = in.nextLine();
 				nAddress = new BusinessAddress(street, city, state,zip);
+				nAddress.count++;
+				outCount.writeInt(nAddress.count);
 				outObject.writeObject(nAddress);
 			}
 			System.out.println("Thank you. If you would like to record another address, type y.");

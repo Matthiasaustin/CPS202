@@ -11,7 +11,7 @@ public class BusinessAddress extends Address implements Serializable
 	
 String compName;
 String dpt;
-
+int count = 0;
 public BusinessAddress()
 {
 	compName = "";
@@ -19,6 +19,7 @@ public BusinessAddress()
 	street = "";
 	state = "";
 	zipCode = 0;
+	count = 0;
 }
 
 public BusinessAddress(Scanner in)
@@ -30,6 +31,7 @@ public BusinessAddress(Scanner in)
     state = in.next();
     zipCode = in.nextInt();
     String separator = in.nextLine();  // Read past end-of-line mark
+    count = 0;
   }
 
 public BusinessAddress(String nstreet, String ncity, String nstate, int nzip)
@@ -38,6 +40,7 @@ public BusinessAddress(String nstreet, String ncity, String nstate, int nzip)
 	city = ncity;
 	state = nstate;
 	zipCode = nzip;
+	count = 0;
 }
 public BusinessAddress (String newcompany, String newdepartment, String newstreet, String newcity, String newstate, int newzipcode)
 {
@@ -47,6 +50,7 @@ public BusinessAddress (String newcompany, String newdepartment, String newstree
     city = newcity;
     state = newstate;
     zipCode = newzipcode;
+    count = 0;
 }
 
 public String getCompName () {return compName;}
