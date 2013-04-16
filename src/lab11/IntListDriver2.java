@@ -30,7 +30,8 @@ public class IntListDriver2
 		System.out.println("*");
 		System.out.println(list1.contains(10));
 		System.out.println("*");
-	//	list1.removeItem(10);
+		list1.removeItem(10);
+		list1.printList();
 		inFile.close();
 	}
 }
