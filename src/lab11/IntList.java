@@ -86,7 +86,24 @@ public class IntList
 		return contain;
 	}
 	
-  public void removeItem(int item);
+  public void removeItem(int item)
+  {
+  	int count = 0;
+		while (count < values.length)
+		{
+			if (values[count] == item)
+			{
+			break;
+			}
+			count++;
+		}
+		value[count] = 0;
+		for(int i = count, j=count+1; j < value.lenght; i++, j++ )
+		{
+			value[i] = value [j]
+		}
+		numItems--;
+  }
 	
 	public void writeList(String fileName) throws IOException
 	{
