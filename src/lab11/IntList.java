@@ -1,4 +1,7 @@
 package lab11;
+
+import java.io.*;
+
 public class IntList
 {
 	// Methods
@@ -47,23 +50,63 @@ public class IntList
 	//       list; false otherwise
 
 	{
-		if (numItems >= listNum)
+		if (numItems >= values.length)
 
 		{
 			return true;
 		}
 		else 
 		{
-
+			return false;
 		}
 	}
 	IntList(int maxItems)
 	// Constructor
 	// Post: Empty list is created with maxItems cells
+	{
+		values = new int[maxItems];
 
+		numItems = 0;
+	}
+	
+	public boolean contains(int search)
+	// returns true if its parameter is in the list and false otherwise
+	{
+		boolean contain = false;
+		int count = 0;
+		while (count < values.length)
+		{
+			if (values[count] == search)
+			{
+				contain = true;
+			}
+			count++;
+		} //loop end
+		
+		return contain;
+	}
+	
+  public void removeItem(int item);
+	
+	public void writeList(String fileName) throws IOException
+	{
+		PrintWriter outFile;
+		outFile = new PrintWriter(new FileWriter(fileName));
+		if(numItems > 0)
+		{
+			for (int index = 0; index < numItems; index++)
+				outFile.println(values[index]);
+		}
+		else
+		{
+			System.out.println("The List is Empty");
+		}
+		outFile.close();
+	}
+	
 	// Data fields
 	private  int numItems;
 	private  int[] values;
-	private int listNum;
+
 }
 
