@@ -34,12 +34,18 @@ public class IntList
   {
 	  if (numItems < 1)
 	  {
-		  
+		  return true;
+	  }
+	  else
+	  {
+		  return false;
 	  }
   }
   public boolean isFull()
   // Post: returns true if there is no more room in the
   //       list; false otherwise
+  
+  
   IntList(int maxItems)
   // Constructor
   // Post: Empty list is created with maxItems cells
