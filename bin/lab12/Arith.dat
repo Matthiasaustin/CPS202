@@ -1,0 +1,11 @@
+ADD  5  -7
+ADD -5  -8
+SUB  7   7
+SUB  8  -8
+MULT 8   8
+MULT 6  -3
+DIV  8   8
+
+DIV  12 -3
+DIV  -12 3
+QUIT 0   0
