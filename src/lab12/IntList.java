@@ -1,9 +1,10 @@
-package lab11;
+package lab12;
 
 import java.io.*;
-
-public class IntList
+import lab12.*;
+public class IntList extends AbstractList
 {
+	
 	// Methods
 	public void store(int item)
 	{
@@ -64,6 +65,7 @@ public class IntList
 	// Constructor
 	// Post: Empty list is created with maxItems cells
 	{
+		super();
 		values = new int[maxItems];
 
 		numItems = 0;
@@ -97,10 +99,10 @@ public class IntList
 			}
 			count++;
 		}
-		value[count] = 0;
-		for(int i = count, j=count+1; j < value.lenght; i++, j++ )
+		values[count] = 0;
+		for(int i = count, j=count+1; j < values.length; i++, j++ )
 		{
-			value[i] = value [j]
+			values[i] = values [j];
 		}
 		numItems--;
   }

@@ -2,6 +2,8 @@ package lab11;
 import java.io.*;
 import java.util.*;
 
+import lab12.IntList;
+
 public class IntListDriver 
 {
 	static Scanner inFile;
@@ -16,6 +18,8 @@ public class IntListDriver
 		while (inFile.hasNextInt())
 		{
 			list1.store(inFile.nextInt());
+			list1.printList();
+			System.out.println("*");
 		}
 		//print list
 		list1.printList();
