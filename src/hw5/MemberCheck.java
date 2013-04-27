@@ -145,11 +145,7 @@ public static void printList()
 				value = "Absent";
 			System.out.println(stringIterator.next() + " " + value);
 		}
-		
-		
-	
 	}
-
 }
 
 
