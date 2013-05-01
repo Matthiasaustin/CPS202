@@ -5,9 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.PopupMenu;
+import java.awt.Window;
+
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.GroupLayout;
@@ -22,9 +28,14 @@ import java.awt.List;
 import java.awt.Choice;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.beans.PropertyChangeListener;
+import org.eclipse.wb.swing.FocusTraversalOnArray;
+import java.awt.Panel;
 
 public class RPSLSGUI extends JFrame {
 	public static TextField theGuess;
+	protected static Object userFrame;
+	protected static Object userPane;
 
 	/**
 	 * Launch the application.
@@ -46,47 +57,57 @@ public class RPSLSGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public RPSLSGUI() {
+		theGuess = new TextField();
+		JLabel instructions2 = new JLabel(
+				"Press hit ENTER when you have \nfinished typing your guess");
+		JLabel instructions1 = new JLabel(
+				"Please enter your guess in the filed below");
+		getContentPane().setLayout(null);
+		// title
 		setTitle("The New Rock, Paper, Scissors");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 420, 220);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+		// welcome statement for program
 		JLabel welcomeStatement = new JLabel(
 				"Welcome to Rock, Paper, Scissors, Lizard, Spock");
-		welcomeStatement.setBounds(75, 27, 302, 16);
-
-		JLabel instructions = new JLabel(
-				"Please enter your guess in the filed below");
-		instructions.setBounds(96, 70, 261, 16);
+		welcomeStatement.setBounds(59, 28, 302, 16);
 
 		getContentPane().setLayout(null);
-		getContentPane().add(instructions);
+		// first line of instructions for the program
+
+		instructions1.setBounds(79, 72, 261, 16);
+		getContentPane().add(instructions1);
+
 		getContentPane().add(welcomeStatement);
+		// second line of instructions for program
 
-		Button guessButton = new Button("Enter Guess");
-		guessButton.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
+		instructions2.setBounds(24, 111, 371, 16);
+		getContentPane().add(instructions2);
 
-			}
-		});
-		guessButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		getContentPane().setFocusTraversalPolicy(
+				new FocusTraversalOnArray(new Component[] { instructions2,
+						welcomeStatement, instructions1, theGuess }));
+		// field for txt to be entered
 
-			}
-		});
-		guessButton.setBounds(96, 166, 103, 28);
-		getContentPane().add(guessButton);
-
-		Button cancelButton = new Button("Cancel");
-		cancelButton.setActionCommand("Cancel");
-		cancelButton.setBounds(287, 166, 70, 28);
-		getContentPane().add(cancelButton);
-
-		theGuess = new TextField();
 		theGuess.setText("Enter Guess Here");
-		theGuess.setBounds(96, 113, 261, 26);
+		theGuess.setBounds(79, 149, 261, 22);
 		getContentPane().add(theGuess);
 
+		// theGuess listener, retrieves results and displays in window.
+		theGuess.addActionListener(new Handler());
 	}
 
+	public class Handler implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent event) {
+
+			String guess;
+
+			guess = (String) theGuess.getText();
+
+			JOptionPane.showMessageDialog(theGuess, LogicSide.rpsls(guess));
+		}
+
+	}
 }
