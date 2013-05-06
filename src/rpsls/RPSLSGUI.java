@@ -36,6 +36,7 @@ public class RPSLSGUI extends JFrame {
 	public static TextField theGuess;
 	protected static Object userFrame;
 	protected static Object userPane;
+	public static JButton history;
 
 	/**
 	 * Launch the application.
@@ -57,6 +58,7 @@ public class RPSLSGUI extends JFrame {
 	 * Create the frame.
 	 */
 	public RPSLSGUI() {
+		history = new JButton("History");
 		theGuess = new TextField();
 		JLabel instructions2 = new JLabel(
 				"Press hit ENTER when you have \nfinished typing your guess");
@@ -75,13 +77,13 @@ public class RPSLSGUI extends JFrame {
 		getContentPane().setLayout(null);
 		// first line of instructions for the program
 
-		instructions1.setBounds(79, 72, 261, 16);
+		instructions1.setBounds(69, 56, 261, 16);
 		getContentPane().add(instructions1);
 
 		getContentPane().add(welcomeStatement);
 		// second line of instructions for program
 
-		instructions2.setBounds(24, 111, 371, 16);
+		instructions2.setBounds(22, 84, 371, 16);
 		getContentPane().add(instructions2);
 
 		getContentPane().setFocusTraversalPolicy(
@@ -90,11 +92,15 @@ public class RPSLSGUI extends JFrame {
 		// field for txt to be entered
 
 		theGuess.setText("Enter Guess Here");
-		theGuess.setBounds(79, 149, 261, 22);
+		theGuess.setBounds(79, 106, 261, 22);
 		getContentPane().add(theGuess);
+
+		history.setBounds(69, 151, 117, 29);
+		getContentPane().add(history);
 
 		// theGuess listener, retrieves results and displays in window.
 		theGuess.addActionListener(new Handler());
+		history.addActionListener(new Handler2());
 	}
 
 	public class Handler implements ActionListener {
@@ -108,6 +114,20 @@ public class RPSLSGUI extends JFrame {
 
 			JOptionPane.showMessageDialog(theGuess, LogicSide.rpsls(guess));
 		}
-
 	}
+
+	public class Handler2 implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			String guess;
+
+			guess = (String) theGuess.getText();
+			JOptionPane.showMessageDialog(history, LogicSide.rpsls(guess)); // add
+																			// the
+																			// function
+																			// we
+																			// need
+																			// here.
+		}
+	}
+
 }
