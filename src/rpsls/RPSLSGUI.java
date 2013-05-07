@@ -86,9 +86,9 @@ public class RPSLSGUI extends JFrame {
 		instructions2.setBounds(22, 84, 371, 16);
 		getContentPane().add(instructions2);
 
-		getContentPane().setFocusTraversalPolicy(
-				new FocusTraversalOnArray(new Component[] { instructions2,
-						welcomeStatement, instructions1, theGuess }));
+		// getContentPane().setFocusTraversalPolicy(
+		// new FocusTraversalOnArray(new Component[] { instructions2,
+		// welcomeStatement, instructions1, theGuess }));
 		// field for txt to be entered
 
 		theGuess.setText("Enter Guess Here");
@@ -118,15 +118,13 @@ public class RPSLSGUI extends JFrame {
 
 	public class Handler2 implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
-			String guess;
 
-			guess = (String) theGuess.getText();
-			JOptionPane.showMessageDialog(history, LogicSide.rpsls(guess)); // add
-																			// the
-																			// function
-																			// we
-																			// need
-																			// here.
+			JOptionPane.showMessageDialog(history, LogicSide.history.results()); // add
+			// the
+			// function
+			// we
+			// need
+			// here.
 		}
 	}
 

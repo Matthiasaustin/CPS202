@@ -1,7 +1,8 @@
 package rpsls;
 import java.math.*;
 public class LogicSide {
-
+	static String winner = "NO WINNER";
+	public static History history = new History();
 	// Rock-paper-scissors-lizard-Spock 
 	//import Math random
 
@@ -94,7 +95,7 @@ public class LogicSide {
 	int playerNum = 0;
 	int difference =  0;
 	int compNum = 0;
-	String winner = "NO WINNER";
+	
 //	     convert name to player_number using name_to_number
 //	    player_num = name_to_number(guess)
 	playerNum = nameToNum(guess);
@@ -125,7 +126,7 @@ public class LogicSide {
 //	     convert comp_number to name using number_to_name
 //	    comp_guess = number_to_name(comp_num)
 	String compGuess = numToName(compNum);
-
+	History.storeScore();
 //	     print results
 //	    print "Player chose " + guess + "."
 	return ("Player chose " + guess + "." + "\nComputer chose " + compGuess + "." + "\n" + winner + " wins!" + "\n");
